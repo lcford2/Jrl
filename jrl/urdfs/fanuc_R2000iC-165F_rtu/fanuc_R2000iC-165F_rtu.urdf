@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<robot name="R-2000iC 165F w RTU" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <joint name="base_to_slide_base" type="fixed">
+        <origin xyz="0 0 0" rpy ="3.14 0 0"/>
+        <parent link="base"/>
+        <child link="slide_base"/>
+    </joint>
+    <joint name="joint_0" type="prismatic">
+        <axis xyz="1 0 0"/>
+        <origin xyz="0 0 0" rpy ="3.14 0 0"/>
+        <limit lower="-0.25" upper="2.0" effort="1" velocity="0.1"/> 
+        <parent link="slide_base" />
+        <child link="slide" />
+    </joint>
+    <joint name="slide_to_fanuc" type="fixed">
+        <origin xyz="1.2588 0 -0.332" rpy="3.14 0 0" />
+        <parent link="slide"/> 
+        <child  link="fanuc_base"/>
+    </joint>
+    <joint name="joint_1" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit lower="-3.228859" upper="3.228859" effort="1" velocity="2.268928" acceleration="4.419994" jerk="17.220745" />
+        <origin xyz="0 0 0.67" rpy="0 -0 0" />
+        <parent link="fanuc_base" />
+        <child link="link_1" />
+    </joint>
+    <joint name="joint_2" type="revolute">
+        <axis xyz="0 1 0" />
+        <limit lower="-1.0472" upper="1.32645" effort="1" velocity="2.007129" acceleration="3.909991" jerk="15.233740" />
+        <origin xyz="0.312 0 0" rpy="0 -0 0" />
+        <parent link="link_1" />
+        <child link="link_2" />
+    </joint>
+    <joint name="joint_3" type="revolute">
+        <axis xyz="0 -1 0" />
+        <limit lower="-2.30" upper="3.14" effort="1" velocity="2.181662" acceleration="4.249999" jerk="16.558409" />
+        <origin xyz="0 0 1.075" rpy="0 -0 0" />
+        <parent link="link_2" />
+        <child link="link_3" />
+    </joint>
+    <joint name="joint_4" type="revolute">
+        <axis xyz="-1 0 0" />
+        <limit lower="-6.283185" upper="6.283185" effort="1" velocity="3.141593" acceleration="6.119979" jerk="23.844095" />
+        <origin xyz="0 0 0.225" rpy="0 -0 0" />
+        <parent link="link_3" />
+        <child link="link_4" />
+    </joint>
+    <joint name="joint_5" type="revolute">
+        <axis xyz="0 -1 0" />
+        <limit lower="-2.181662" upper="2.181662" effort="1" velocity="3.141593" acceleration="6.119979" jerk="23.844095" />
+        <origin xyz="1.28 0 0" rpy="0 -0 0" />
+        <parent link="link_4" />
+        <child link="link_5" />
+    </joint>
+    <joint name="joint_6" type="revolute">
+        <axis xyz="-1 0 0" />
+        <limit lower="-6.283185" upper="6.283185" effort="1" velocity="4.537856" acceleration="8.839971" jerk="34.441471" />
+        <!-- <limit lower="-3.1415925" upper="3.1415925" effort="1" velocity="4.537856" acceleration="8.839971" jerk="34.441471" /> -->
+        <origin xyz="0.215 0 0" rpy="0 -0 0" />
+        <parent link="link_5" />
+        <child link="link_6" />
+    </joint>
+    <joint name="link_6-to-default_tcp" type="fixed">
+        <origin xyz="0 0 0" rpy="-3.14159 1.5708 3.14159" />
+        <parent link="link_6" />
+        <child link="default_tcp" />
+    </joint>
+    <joint name="default_tcp-to-tool_changer" type="fixed">
+        <origin xyz="0.0 0 0.042" rpy="0 0 0" />
+        <parent link="default_tcp" />
+        <child link="tool_changer_robot_side" />
+    </joint>
+    <link name="base" />
+    <link name="slide">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/rtu_slide.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/rtu_slide.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="slide_base">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/slide_base.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/slide_base.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="fanuc_base">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/base.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/base.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="default_tcp" />
+    <link name="link_1">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_1.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_1.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_2">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_2.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_2.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_3">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_3.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_3.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_4">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_4.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_4.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_5">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_5.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_5.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_6">
+        <visual>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/visual/link_6.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="urdfs/fanuc/geometry/collision/link_6.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="tool_changer_robot_side"> 
+        <visual> 
+            <geometry> 
+                <!-- <mesh filename="package//fanuc_urdf/urdf/geometry/visual/tool_changer_robot_side.stl"/>-->            
+                <cylinder length="0.0508" radius="0.0725"/>
+            </geometry> 
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.0508" radius="0.0725"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

@@ -451,8 +451,48 @@ class Ur5(Robot):
             additional_link_name=None,
         )
 
+class Fanuc(Robot):
+    name = "fanuc_R2000ic-165F_rtu"
+    formal_robot_name = "Fanuc R2000iC 165F with RTU"
 
-ALL_CLCS = [Panda, Fetch, FetchArm, Rizon4, Ur5]
+    # See
+    # Rotational repeatability calculated in calculate_rotational_repeatability.py
+    POSITIONAL_REPEATABILITY_MM = 0.1
+    ROTATIONAL_REPEATABILITY_DEG = 0.12614500942996015
+
+    def __init__(self, verbose: bool = False):
+        active_joints = [
+            "joint_0",
+            "joint_1",
+            "joint_2",
+            "joint_3",
+            "joint_4",
+            "joint_5",
+            "joint_6",
+        ]
+        urdf_filepath = get_filepath(f"urdfs/{name}/{name}.urdf")
+        base_link = "base"
+        end_effector_link_name = "tool_changer_robot_side"
+
+        # Must match the total number of joints (including fixed) in the robot.
+        # Use "None" for no collision geometry
+        collision_capsules_by_link = None
+
+        ignored_collision_pairs = []
+        Robot.__init__(
+            self,
+            Fanuc.name,
+            urdf_filepath,
+            active_joints,
+            base_link,
+            end_effector_link_name,
+            ignored_collision_pairs,
+            collision_capsules_by_link,
+            verbose=verbose,
+            additional_link_name=None,
+        )
+
+ALL_CLCS = [Panda, Fetch, FetchArm, Rizon4, Ur5, Fanuc]
 # ALL_CLCS = [Ur5]
 # TODO: Add capsules for iiwa7, fix FK for baxter
 # ALL_CLCS = [Panda, Fetch, FetchArm, Iiwa7, Baxter]
