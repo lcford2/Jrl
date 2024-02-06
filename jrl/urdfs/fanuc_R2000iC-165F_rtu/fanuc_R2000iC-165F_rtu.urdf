@@ -74,36 +74,36 @@
     <link name="slide">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/rtu_slide.stl" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/rtu_slide.stl" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/rtu_slide.stl" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/rtu_slide.stl" />
             </geometry>
         </collision>
     </link>
     <link name="slide_base">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/slide_base.stl" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/slide_base.stl" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/slide_base.stl" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/slide_base.stl" />
             </geometry>
         </collision>
     </link>
     <link name="fanuc_base">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/base.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/base.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/base.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/base.dae" />
             </geometry>
         </collision>
     </link>
@@ -111,72 +111,72 @@
     <link name="link_1">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_1.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_1.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_1.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_1.dae" />
             </geometry>
         </collision>
     </link>
     <link name="link_2">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_2.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_2.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_2.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_2.dae" />
             </geometry>
         </collision>
     </link>
     <link name="link_3">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_3.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_3.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_3.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_3.dae" />
             </geometry>
         </collision>
     </link>
     <link name="link_4">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_4.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_4.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_4.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_4.dae" />
             </geometry>
         </collision>
     </link>
     <link name="link_5">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_5.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_5.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_5.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_5.dae" />
             </geometry>
         </collision>
     </link>
     <link name="link_6">
         <visual>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/visual/link_6.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/visual/link_6.dae" />
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="urdfs/fanuc/geometry/collision/link_6.dae" />
+                <mesh filename="urdfs/fanuc_R2000iC-165F_rtu/geometry/collision/link_6.dae" />
             </geometry>
         </collision>
     </link>

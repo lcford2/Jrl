@@ -452,7 +452,7 @@ class Ur5(Robot):
         )
 
 class Fanuc(Robot):
-    name = "fanuc_R2000ic-165F_rtu"
+    name = "fanuc_R2000iC-165F_rtu"
     formal_robot_name = "Fanuc R2000iC 165F with RTU"
 
     # See
@@ -470,7 +470,7 @@ class Fanuc(Robot):
             "joint_5",
             "joint_6",
         ]
-        urdf_filepath = get_filepath(f"urdfs/{name}/{name}.urdf")
+        urdf_filepath = get_filepath(f"urdfs/{self.name}/{self.name}.urdf")
         base_link = "base"
         end_effector_link_name = "tool_changer_robot_side"
 
